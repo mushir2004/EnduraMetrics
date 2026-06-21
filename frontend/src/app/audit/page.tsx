@@ -20,7 +20,8 @@ export default function AuditPage() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/audit", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+      const res = await fetch(`${apiUrl}/api/audit`, {
         method: "POST",
         body: formData,
       });
