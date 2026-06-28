@@ -8,7 +8,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Digital Twin", href: "/", icon: <Gauge size={20} /> },
+    { name: "Digital Twin", href: "/simulator", icon: <Gauge size={20} /> },
     { name: "Live Telemetry", href: "/dashboard", icon: <Activity size={20} /> },
     { name: "Quality Audit", href: "/audit", icon: <FileCheck size={20} /> }, // We will build this next!
   ];

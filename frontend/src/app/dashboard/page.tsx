@@ -16,7 +16,8 @@ export default function DashboardPage() {
     if (isStreaming) {
       interval = setInterval(async () => {
         try {
-          const res = await fetch(`http://127.0.0.1:8000/api/stream/${currentIndex}`);
+          const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+          const res = await fetch(`${apiUrl}/api/stream/${currentIndex}`);
           if (!res.ok) throw new Error("End of data or fetch error");
           
           const result = await res.json();

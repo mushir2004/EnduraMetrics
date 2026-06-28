@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar"; // Changed from Sidebar
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-50 text-slate-900 flex`}>
-        {/* The Sidebar is fixed to the left */}
-        <Sidebar />
+      <body className={`${inter.className} bg-slate-50 text-slate-900 flex flex-col min-h-screen`}>
+        {/* The new top Navbar */}
+        <Navbar />
         
-        {/* The main content area shifts to the right to make room for the 64-width (256px) sidebar */}
-        <main className="flex-1 ml-64 min-h-screen">
+        {/* The main content area now sits naturally below the Navbar */}
+        <main className="flex-1 w-full">
           {children}
         </main>
       </body>
