@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Gauge, Activity, FileCheck, Home } from "lucide-react";
+import { Gauge, Activity, FileCheck, Home, Hexagon } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -42,10 +42,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
-            Endura<span className="text-blue-600">Metrics</span>
+        {/* Upgraded Premium Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 group-hover:scale-105 transition-all duration-300">
+            {/* Layered icons for a custom 3D/Tech feel */}
+            <Hexagon className="text-white/20 absolute" size={28} fill="currentColor" />
+            <Activity className="text-white z-10" size={20} strokeWidth={2.5} />
+          </div>
+          <h2 className="text-2xl font-extrabold tracking-tight flex items-center">
+            <span className="text-slate-900 group-hover:text-slate-700 transition-colors duration-300">Endura</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 ml-[1px]">Metrics</span>
           </h2>
         </Link>
         
